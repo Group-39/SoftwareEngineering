@@ -5,6 +5,8 @@
  */
 package main;
 
+import java.awt.Image;
+
 
 
 /**
@@ -18,6 +20,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        ImageIcon myimage=new ImageIcon(Toolkit.getDefaultToolkit().getimage(getClass().getResource("Kitchen.jpg")));
+        Image img1=myimage.getImage();
+        Image img2=img1.getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(),Image.SCALE_SMOOTH)
+        ImageIcon i =new ImageIcon(img2);
+        jLabel1.seticon(i);
     }
     
 
@@ -34,23 +41,23 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel2");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Kitchen.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel1)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(442, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jLabel1)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         pack();
